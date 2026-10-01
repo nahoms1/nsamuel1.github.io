@@ -3,9 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
+    <meta name="description" content="A class project exploring phishing attacks and social engineering for IT 3203.">
+    <title>Phishing &amp; Social Engineering | Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello, world!</h1>
+
+    <!-- ===== Site Header with Consistent Main Menu ===== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="site-title">Phishing &amp; Social Engineering</h1>
+            <p class="site-tagline">Understanding the Human Attack Surface</p>
+        </div>
+        <nav class="main-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="how-phishing-works.html">How Phishing Works</a></li>
+                <li><a href="defenses.html">Defenses</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main class="content">
+
+        <!-- Abstract / Intro Section -->
+        <section class="card">
+            <h2>Abstract</h2>
+            <p>
+                Phishing and social engineering remain among the most successful and
+                costly attack vectors in modern cybersecurity. Rather than exploiting
+                software vulnerabilities, these attacks target the human element —
+                manipulating trust, urgency, and authority to trick users into
+                revealing credentials, transferring funds, or installing malware.
+                This site examines how phishing attacks work, the psychological
+                principles they exploit, and the technical and human defenses that
+                organizations can deploy to reduce risk.
+            </p>
+        </section>
+
+        <!-- Key Terms Section -->
+        <section class="card">
+            <h2>Key Terms</h2>
+            <ul class="key-terms">
+                <li><strong>Phishing</strong> — fraudulent messages that impersonate a trusted party to steal information.</li>
+                <li><strong>Spear Phishing</strong> — a targeted phishing attack aimed at a specific individual or role.</li>
+                <li><strong>Business Email Compromise (BEC)</strong> — impersonation of an executive or vendor to trigger fraudulent payments.</li>
+                <li><strong>Pretexting</strong> — inventing a believable scenario to justify a request for information.</li>
+                <li><strong>MFA</strong> — Multi-Factor Authentication; a second verification step beyond a password.</li>
+                <li><strong>Spoofing</strong> — falsifying an email address, domain, or caller ID to appear legitimate.</li>
+            </ul>
+        </section>
+
+        <!-- Table of Contents Section -->
+        <section class="card">
+            <h2>Table of Contents</h2>
+            <table class="toc-table">
+                <caption>Explore the site</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Page</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="how-phishing-works.html">How Phishing Works</a></td>
+                        <td>The anatomy of an attack, common lures, and phishing variants.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="defenses.html">Defenses &amp; Best Practices</a></td>
+                        <td>Technical controls, human training, and layered defense strategies.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="key-concepts.html">Key Concepts</a></td>
+                        <td>Seven foundational concepts for understanding phishing.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="references.html">References &amp; Resources</a></td>
+                        <td>Sources, further reading, and interactive learning tools.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="about.html">About</a></td>
+                        <td>About the author and this class project.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer with Class Project Note (required) ===== -->
+    <footer class="site-footer">
+        <p>
+            This is a class project for
+            <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
+            &copy; 2025 — For educational use only.
+        </p>
+    </footer>
+
 </body>
 </html>
