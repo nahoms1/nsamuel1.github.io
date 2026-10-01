@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical and human defenses against phishing and social engineering.">
+    <title>Defenses | Phishing &amp; Social Engineering</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="site-title">Phishing &amp; Social Engineering</h1>
+            <p class="site-tagline">Understanding the Human Attack Surface</p>
+        </div>
+        <nav class="main-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-phishing-works.html">How Phishing Works</a></li>
+                <li><a href="defenses.html" class="active">Defenses</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+
+        <section class="card">
+            <h2>Layered Defense: No Single Control Is Enough</h2>
+            <p>
+                Effective phishing defense combines <strong>technical controls</strong>
+                that block or detect attacks with <strong>human controls</strong> that
+                help users recognize and report suspicious messages. The goal is not
+                to stop every attack — it is to reduce the probability of success and
+                shorten the time to detection.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Technical Controls</h2>
+            <ul class="icon-list">
+                <li><strong>Email Authentication</strong> — SPF, DKIM, and DMARC verify that messages actually come from the domains they claim.</li>
+                <li><strong>Email Filtering &amp; Gateways</strong> — Reputation checks, attachment sandboxing, and URL rewriting catch known and novel threats.</li>
+                <li><strong>Multi-Factor Authentication (MFA)</strong> — Even if credentials are stolen, a second factor blocks most account takeovers.</li>
+                <li><strong>Phishing-Resistant MFA</strong> — FIDO2 / WebAuthn security keys are not vulnerable to real-time phishing proxies.</li>
+                <li><strong>Endpoint Detection &amp; Response (EDR)</strong> — Detects post-click malware execution and lateral movement.</li>
+                <li><strong>DNS Filtering</strong> — Blocks look-alike domains before a browser ever loads them.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Human Controls</h2>
+            <ul class="icon-list">
+                <li><strong>Security Awareness Training</strong> — Regular, short, role-relevant training rather than annual checkbox sessions.</li>
+                <li><strong>Phishing Simulations</strong> — Controlled fake campaigns that measure and improve click and report rates.</li>
+                <li><strong>Easy Reporting</strong> — A one-click "Report Phish" button in the mail client.</li>
+                <li><strong>Positive Reinforcement</strong> — Reward reporting rather than punishing clicks.</li>
+                <li><strong>Verification Procedures</strong> — Out-of-band confirmation for any payment or credential request.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Red Flags Every User Should Know</h2>
+            <ol class="step-list">
+                <li>Unexpected urgency or threats of account loss.</li>
+                <li>Mismatched sender address or display name.</li>
+                <li>Links whose visible text differs from the real URL (hover to check).</li>
+                <li>Generic greetings ("Dear Customer") instead of your name.</li>
+                <li>Requests for credentials, gift cards, or wire transfers.</li>
+                <li>Unexpected attachments, especially .html, .zip, or macro-enabled Office files.</li>
+                <li>Reply-to address that differs from the "From" address.</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Defense Layers at a Glance</h2>
+            <table class="data-table">
+                <caption>What each layer stops</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Layer</th>
+                        <th scope="col">Primary Threat Stopped</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SPF / DKIM / DMARC</td>
+                        <td>Direct domain spoofing</td>
+                    </tr>
+                    <tr>
+                        <td>Email Gateway Filtering</td>
+                        <td>Known malicious attachments and links</td>
+                    </tr>
+                    <tr>
+                        <td>MFA</td>
+                        <td>Credential theft via fake login pages</td>
+                    </tr>
+                    <tr>
+                        <td>Phishing-Resistant MFA</td>
+                        <td>Real-time adversary-in-the-middle phishing</td>
+                    </tr>
+                    <tr>
+                        <td>Awareness Training</td>
+                        <td>Novel social engineering that bypasses filters</td>
+                    </tr>
+                    <tr>
+                        <td>Reporting + IR</td>
+                        <td>Reduces dwell time after a successful click</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            This is a class project for
+            <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
+            &copy; 2025 — For educational use only.
+        </p>
+    </footer>
+
+</body>
+</html>
