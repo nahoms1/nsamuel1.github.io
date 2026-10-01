@@ -1,0 +1,162 @@
+/* =====================================================================
+   IT 3203 — Project Milestone #1
+   File: style.css
+   Purpose: Single external stylesheet for the entire site.
+   Demonstrates:
+     - Three selector types: element, class, ID
+     - Layout using CSS Grid (main menu) and Flexbox (header, cards)
+     - Hover effect on links
+     - Padding, margins, borders, colors, font settings
+   ===================================================================== */
+
+/* ---------- 1. Reset & Base (Element Selectors) ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e6edf3;
+    background-color: #0d1117;
+}
+
+h1, h2, h3 {
+    font-family: "Consolas", "Courier New", monospace;
+    letter-spacing: 0.5px;
+    color: #58d3f7;
+    margin-top: 0;
+}
+
+h2 {
+    border-bottom: 2px solid #1f6feb;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #58d3f7;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* ---------- 2. Hover Effect on Links (Pseudo-class Selector) ---------- */
+a:hover {
+    color: #0d1117;
+    background-color: #58d3f7;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+/* ---------- 3. Site Header ---------- */
+.site-header {
+    background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+    border-bottom: 2px solid #1f6feb;
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+.header-inner {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.site-title {
+    font-size: 2rem;
+    margin: 0;
+    color: #58d3f7;
+}
+
+.site-tagline {
+    margin: 0.25rem 0 0 0;
+    color: #8b949e;
+    font-style: italic;
+}
+
+/* ---------- 4. Main Menu (CSS Grid Layout) ---------- */
+.main-menu ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.main-menu a {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid #30363d;
+    border-radius: 6px 6px 0 0;
+    background-color: #161b22;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.main-menu a:hover {
+    background-color: #1f6feb;
+    color: #ffffff;
+}
+
+/* ID selector example: highlights the active page */
+.main-menu a.active {
+    background-color: #1f6feb;
+    color: #ffffff;
+    border-color: #58d3f7;
+}
+
+/* ---------- 5. Main Content Area ---------- */
+.content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ---------- 6. Cards (Flexbox for internal layout) ---------- */
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card p {
+    margin-bottom: 0.75rem;
+}
+
+/* ---------- 7. Lists ---------- */
+.key-terms,
+.icon-list,
+.ref-list,
+.step-list,
+.profile-list {
+    padding-left: 1.25rem;
+}
+
+.key-terms li,
+.icon-list li,
+.ref-list li,
+.step-list li,
+.profile-list li {
+    margin-bottom: 0.5rem;
+}
+
+.step-list li::marker {
+    color: #58d3f7;
+    font-weight: bold;
+}
+
+/* ---------- 8. Tables ---------- */
