@@ -28,7 +28,3 @@ built with hand-written HTML5 and a single external CSS file.
 
 ## Deployment
 Hosted on GitHub Pages at: `https://<nahoms1>.github.io/<nahoms1.github.io>/`
-
-## Validation
-All pages validated with the W3C HTML Validator:
-https://validator.w3.org/
