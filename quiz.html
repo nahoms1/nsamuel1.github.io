@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Self-assessment quiz on phishing and social engineering for IT 3203.">
+    <title>Quiz | Phishing &amp; Social Engineering</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== Site Header (same as Milestone 1) ===== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="site-title">Phishing &amp; Social Engineering</h1>
+            <p class="site-tagline">Understanding the Human Attack Surface</p>
+        </div>
+        <nav class="main-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-phishing-works.html">How Phishing Works</a></li>
+                <li><a href="defenses.html">Defenses</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+
+        <!-- ===== Timer + Intro Card ===== -->
+        <section class="card">
+            <h2>Self-Assessment Quiz</h2>
+            <p>
+                Test your understanding of phishing and social engineering.
+                You have <strong>10 minutes</strong> to answer <strong>10 questions</strong>.
+                A score of <strong>70% or higher</strong> is a passing result.
+            </p>
+
+            <!-- Live countdown timer -->
+            <div id="timer-box" class="timer-box" aria-live="polite">
+                <span class="timer-label">Time remaining:</span>
+                <span id="timer" class="timer-value">10:00</span>
+            </div>
+        </section>
+
+        <!-- ===== Results Panel (hidden until submit) ===== -->
+        <section id="results-panel" class="card results-panel" hidden>
+            <h2>Quiz Results</h2>
+            <div id="overall-result" class="overall-result"></div>
+            <p id="score-line" class="score-line"></p>
+            <p id="time-line" class="time-line"></p>
+            <div id="per-question-results"></div>
+            <button type="button" id="retake-btn" class="btn btn-primary">Retake Quiz</button>
+        </section>
+
+        <!-- ===== Quiz Form ===== -->
+        <form id="quiz-form" class="quiz-form" novalidate>
+            <ol class="question-list">
+
+                <!-- Q1: Single-choice MCQ -->
+                <li class="question" data-question="1">
+                    <p class="question-text"><strong>1.</strong> Which best defines phishing?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> A. Installing malware directly on a server</label>
+                        <label><input type="radio" name="q1" value="b"> B. Fraudulent messages impersonating a trusted party to steal information</label>
+                        <label><input type="radio" name="q1" value="c"> C. A brute-force password attack</label>
+                        <label><input type="radio" name="q1" value="d"> D. A physical break-in at a data center</label>
+                    </div>
+                </li>
+
+                <!-- Q2: Single-choice MCQ -->
+                <li class="question" data-question="2">
+                    <p class="question-text"><strong>2.</strong> A highly targeted phishing attack aimed at a specific executive is called:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> A. Mass phishing</label>
+                        <label><input type="radio" name="q2" value="b"> B. Clone phishing</label>
+                        <label><input type="radio" name="q2" value="c"> C. Spear phishing</label>
+                        <label><input type="radio" name="q2" value="d"> D. Smishing</label>
+                    </div>
+                </li>
+
+                <!-- Q3: Single-choice MCQ -->
+                <li class="question" data-question="3">
+                    <p class="question-text"><strong>3.</strong> Which email authentication trio helps prevent domain spoofing?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> A. SSL, TLS, HTTPS</label>
+                        <label><input type="radio" name="q3" value="b"> B. SPF, DKIM, DMARC</label>
+                        <label><input type="radio" name="q3" value="c"> C. AES, RSA, SHA</label>
+                        <label><input type="radio" name="q3" value="d"> D. TCP, UDP, ICMP</label>
+                    </div>
+                </li>
+
+                <!-- Q4: Single-choice MCQ -->
+                <li class="question" data-question="4">
+                    <p class="question-text"><strong>4.</strong> Business Email Compromise (BEC) attacks are especially difficult to detect technically because:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> A. They always contain ransomware</label>
+                        <label><input type="radio" name="q4" value="b"> B. They often contain no malware and no malicious link</label>
+                        <label><input type="radio" name="q4" value="c"> C. They only target personal email accounts</label>
+                        <label><input type="radio" name="q4" value="d"> D. They bypass all email servers</label>
+                    </div>
+                </li>
+
+                <!-- Q5: Multi-select MCQ (3 correct) -->
+                <li class="question" data-question="5">
+                    <p class="question-text"><strong>5.</strong> Which of the following are common red flags of a phishing email? <em>(Select all that apply.)</em></p>
+                    <div class="options">
+                        <label><input type="checkbox" name="q5" value="a"> A. Urgent language threatening account loss</label>
+                        <label><input type="checkbox" name="q5" value="b"> B. A sender address that does not match the display name</label>
+                        <label><input type="checkbox" name="q5" value="c"> C. A link whose visible text differs from its real URL</label>
+                        <label><input type="checkbox" name="q5" value="d"> D. A personalized message from a known colleague referencing a real meeting</label>
+                    </div>
+                </li>
+
+                <!-- Q6: Fill in the blank -->
+                <li class="question" data-question="6">
+                    <p class="question-text">
+                        <strong>6.</strong> A second verification step beyond a password is called
+                        <input type="text" name="q6" class="fill-blank" placeholder="type answer" autocomplete="off" aria-label="Answer for question 6">
+                        (MFA).
+                    </p>
+                </li>
+
+                <!-- Q7: Fill in the blank -->
+                <li class="question" data-question="7">
+                    <p class="question-text">
+                        <strong>7.</strong> The fabrication of a believable scenario that gives an attacker a reason to ask for information is called
+                        <input type="text" name="q7" class="fill-blank" placeholder="type answer" autocomplete="off" aria-label="Answer for question 7">.
+                    </p>
+                </li>
+
+                <!-- Q8: Single-choice MCQ -->
+                <li class="question" data-question="8">
+                    <p class="question-text"><strong>8.</strong> Phishing conducted over SMS text messages is called:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> A. Vishing</label>
+                        <label><input type="radio" name="q8" value="b"> B. Smishing</label>
+                        <label><input type="radio" name="q8" value="c"> C. Whaling</label>
+                        <label><input type="radio" name="q8" value="d"> D. Pharming</label>
+                    </div>
+                </li>
+
+                <!-- Q9: Single-choice MCQ -->
+                <li class="question" data-question="9">
+                    <p class="question-text"><strong>9.</strong> Which defense is specifically designed to resist real-time adversary-in-the-middle phishing?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> A. SMS-based one-time codes</label>
+                        <label><input type="radio" name="q9" value="b"> B. Phishing-resistant MFA such as FIDO2 / WebAuthn</label>
+                        <label><input type="radio" name="q9" value="c"> C. Longer passwords</label>
+                        <label><input type="radio" name="q9" value="d"> D. Annual awareness training only</label>
+                    </div>
+                </li>
+
+                <!-- Q10: Single-choice MCQ -->
+                <li class="question" data-question="10">
+                    <p class="question-text"><strong>10.</strong> The most effective long-term defense against novel social engineering is:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> A. Blocking all external email</label>
+                        <label><input type="radio" name="q10" value="b"> B. Relying only on antivirus software</label>
+                        <label><input type="radio" name="q10" value="c"> C. Layered defenses combining technology and trained, reporting users</label>
+                        <label><input type="radio" name="q10" value="d"> D. Disabling MFA to simplify login</label>
+                    </div>
+                </li>
+
+            </ol>
+
+            <div class="form-actions">
+                <button type="submit" id="submit-btn" class="btn btn-primary">Submit Quiz</button>
+                <button type="button" id="reset-btn" class="btn btn-secondary">Reset Answers</button>
+            </div>
+        </form>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            This is a class project for
+            <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
+            &copy; 2025 — For educational use only.
+        </p>
+    </footer>
+
+    <!-- Load the quiz logic at the end of <body> so the DOM is ready -->
+    <script src="js/quiz.js"></script>
+</body>
+</html>
