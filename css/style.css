@@ -1,22 +1,21 @@
 /* =====================================================================
-   IT 3203 — Project Milestone #1
+   IT 3203 — Project Milestone #2
    File: style.css
-   Purpose: Single external stylesheet for the entire site.
+   Purpose: Single external stylesheet for the entire site, including
+            the self-assessment quiz (Milestone 2).
+
    Demonstrates:
-     - Three selector types: element, class, ID
-     - Layout using CSS Grid (main menu) and Flexbox (header, cards)
-     - Hover effect on links
+     - Element, class, ID, and attribute selectors
+     - CSS Grid (main menu, quiz options) and Flexbox (header, cards)
+     - Hover effects on links and buttons
      - Padding, margins, borders, colors, font settings
+     - Responsive media queries
    ===================================================================== */
 
-/* ---------- 1. Reset & Base (Element Selectors) ---------- */
-* {
-    box-sizing: border-box;
-}
+/* ---------- 1. Reset & Base ---------- */
+* { box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -47,7 +46,6 @@ a {
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-/* ---------- 2. Hover Effect on Links (Pseudo-class Selector) ---------- */
 a:hover {
     color: #0d1117;
     background-color: #58d3f7;
@@ -55,7 +53,7 @@ a:hover {
     padding: 0 4px;
 }
 
-/* ---------- 3. Site Header ---------- */
+/* ---------- 2. Site Header ---------- */
 .site-header {
     background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
     border-bottom: 2px solid #1f6feb;
@@ -67,27 +65,18 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-.site-title {
-    font-size: 2rem;
-    margin: 0;
-    color: #58d3f7;
-}
+.site-title { font-size: 2rem; margin: 0; color: #58d3f7; }
 
-.site-tagline {
-    margin: 0.25rem 0 0 0;
-    color: #8b949e;
-    font-style: italic;
-}
+.site-tagline { margin: 0.25rem 0 0 0; color: #8b949e; font-style: italic; }
 
-/* ---------- 4. Main Menu (CSS Grid Layout) ---------- */
+/* ---------- 3. Main Menu (CSS Grid, 7 items now) ---------- */
 .main-menu ul {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 0.5rem;
     list-style: none;
-    margin: 0;
     padding: 0;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -99,7 +88,7 @@ a:hover {
     border-radius: 6px 6px 0 0;
     background-color: #161b22;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .main-menu a:hover {
@@ -107,14 +96,13 @@ a:hover {
     color: #ffffff;
 }
 
-/* ID selector example: highlights the active page */
 .main-menu a.active {
     background-color: #1f6feb;
     color: #ffffff;
     border-color: #58d3f7;
 }
 
-/* ---------- 5. Main Content Area ---------- */
+/* ---------- 4. Main Content ---------- */
 .content {
     max-width: 1000px;
     margin: 2rem auto;
@@ -124,7 +112,6 @@ a:hover {
     gap: 1.5rem;
 }
 
-/* ---------- 6. Cards (Flexbox for internal layout) ---------- */
 .card {
     background-color: #161b22;
     border: 1px solid #30363d;
@@ -133,40 +120,24 @@ a:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.card p {
-    margin-bottom: 0.75rem;
-}
+.card p { margin-bottom: 0.75rem; }
 
-/* ---------- 7. Lists ---------- */
-.key-terms,
-.icon-list,
-.ref-list,
-.step-list,
-.profile-list {
+/* ---------- 5. Lists ---------- */
+.key-terms, .icon-list, .ref-list, .step-list, .profile-list {
     padding-left: 1.25rem;
 }
-
-.key-terms li,
-.icon-list li,
-.ref-list li,
-.step-list li,
-.profile-list li {
+.key-terms li, .icon-list li, .ref-list li, .step-list li, .profile-list li {
     margin-bottom: 0.5rem;
 }
+.step-list li::marker { color: #58d3f7; font-weight: bold; }
 
-.step-list li::marker {
-    color: #58d3f7;
-    font-weight: bold;
-}
-
-/* ---------- 8. Tables ---------- */
+/* ---------- 6. Tables ---------- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 0.75rem;
     font-size: 0.95rem;
 }
-
 caption {
     caption-side: top;
     text-align: left;
@@ -174,40 +145,19 @@ caption {
     color: #8b949e;
     padding-bottom: 0.5rem;
 }
+th, td { border: 1px solid #30363d; padding: 0.6rem 0.8rem; text-align: left; }
+th { background-color: #1f6feb; color: #ffffff; font-weight: 600; }
+tbody tr:nth-child(even) { background-color: #0d1117; }
+tbody tr:hover { background-color: #21262d; }
 
-th, td {
-    border: 1px solid #30363d;
-    padding: 0.6rem 0.8rem;
-    text-align: left;
-}
-
-th {
-    background-color: #1f6feb;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #0d1117;
-}
-
-tbody tr:hover {
-    background-color: #21262d;
-}
-
-/* ---------- 9. Images / Figures ---------- */
-.figure {
-    margin: 1rem 0 0 0;
-    text-align: center;
-}
-
+/* ---------- 7. Figures ---------- */
+.figure { margin: 1rem 0 0 0; text-align: center; }
 .figure img {
     max-width: 100%;
     height: auto;
     border: 2px solid #30363d;
     border-radius: 6px;
 }
-
 figcaption {
     font-size: 0.85rem;
     color: #8b949e;
@@ -215,13 +165,8 @@ figcaption {
     font-style: italic;
 }
 
-/* ---------- 10. Profile Section (About Page) ---------- */
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
+/* ---------- 8. Profile ---------- */
+.profile { display: flex; flex-direction: column; align-items: flex-start; }
 .profile-photo {
     width: 140px;
     height: 140px;
@@ -231,7 +176,7 @@ figcaption {
     margin-bottom: 1rem;
 }
 
-/* ---------- 11. Footer ---------- */
+/* ---------- 9. Footer ---------- */
 .site-footer {
     background-color: #161b22;
     border-top: 2px solid #1f6feb;
@@ -241,27 +186,230 @@ figcaption {
     font-size: 0.9rem;
     margin-top: 2rem;
 }
+.site-footer a { color: #58d3f7; font-weight: 600; }
 
-.site-footer a {
+/* =====================================================================
+   10. QUIZ STYLES  (Milestone 2)
+   ===================================================================== */
+
+/* Timer box */
+.timer-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #1f6feb;
+    border-radius: 6px;
+    background-color: #0d1117;
+}
+
+.timer-label { color: #8b949e; font-weight: 600; }
+
+.timer-value {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #58d3f7;
+}
+
+/* Red pulse when under 1 minute */
+.timer-warning {
+    border-color: #f85149;
+    animation: pulse 1s infinite;
+}
+.timer-warning .timer-value { color: #f85149; }
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(248, 81, 73, 0.4); }
+    50%      { box-shadow: 0 0 0 8px rgba(248, 81, 73, 0); }
+}
+
+/* Quiz form */
+.quiz-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.question-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.question {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s ease;
+}
+
+.question:focus-within { border-color: #58d3f7; }
+
+.question-text {
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    color: #e6edf3;
+}
+
+/* Options grid (radio + checkbox) */
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.options label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: #0d1117;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    font-size: 0.95rem;
+}
+
+.options label:hover {
+    background-color: #21262d;
+    border-color: #58d3f7;
+}
+
+.options input[type="radio"],
+.options input[type="checkbox"] {
+    accent-color: #58d3f7;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+/* Fill-in-the-blank inputs */
+.fill-blank {
+    display: inline-block;
+    min-width: 220px;
+    padding: 0.4rem 0.6rem;
+    margin: 0 0.25rem;
+    border: 1px solid #30363d;
+    border-bottom: 2px solid #58d3f7;
+    border-radius: 4px;
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.fill-blank:focus {
+    outline: none;
+    border-color: #58d3f7;
+    box-shadow: 0 0 0 2px rgba(88, 211, 247, 0.3);
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    font-size: 1rem;
     font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* ---------- 12. Responsive Adjustments ---------- */
+.btn-primary {
+    background-color: #1f6feb;
+    color: #ffffff;
+    border-color: #1f6feb;
+}
+
+.btn-primary:hover { background-color: #58d3f7; color: #0d1117; border-color: #58d3f7; }
+
+.btn-secondary {
+    background-color: transparent;
+    color: #58d3f7;
+    border-color: #58d3f7;
+}
+
+.btn-secondary:hover { background-color: #58d3f7; color: #0d1117; }
+
+.btn:active { transform: translateY(1px); }
+
+/* ---------- Results Panel ---------- */
+.results-panel {
+    border: 2px solid #58d3f7;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.overall-result {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "Consolas", "Courier New", monospace;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.overall-result.pass { background-color: #238636; color: #ffffff; }
+.overall-result.fail { background-color: #da3633; color: #ffffff; }
+
+.score-line, .time-line {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+}
+
+.score-line.pass { color: #3fb950; }
+.score-line.fail { color: #f85149; }
+.time-line { color: #8b949e; }
+
+/* Per-question result rows */
+.result-row {
+    display: grid;
+    grid-template-columns: 120px 120px 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.65rem 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+}
+
+.result-row.correct   { background-color: rgba(35, 134, 54, 0.15);  border-left: 4px solid #3fb950; }
+.result-row.incorrect { background-color: rgba(218, 54, 51, 0.15);  border-left: 4px solid #f85149; }
+
+.result-q      { font-weight: 700; color: #58d3f7; }
+.result-status { font-weight: 700; }
+.result-row.correct   .result-status { color: #3fb950; }
+.result-row.incorrect .result-status { color: #f85149; }
+.result-answer { color: #c9d1d9; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .main-menu ul { grid-template-columns: repeat(4, 1fr); }
+}
+
 @media (max-width: 700px) {
-    .main-menu ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .site-title {
-        font-size: 1.5rem;
-    }
-
-    .content {
-        padding: 0 1rem;
-    }
+    .main-menu ul { grid-template-columns: repeat(2, 1fr); }
+    .site-title   { font-size: 1.5rem; }
+    .content      { padding: 0 1rem; }
+    .result-row   { grid-template-columns: 1fr; gap: 0.25rem; }
+    .form-actions { justify-content: stretch; }
+    .btn          { width: 100%; }
 }
-    font-weight: bold;
-}
-
-/* ---------- 8. Tables ---------- */
