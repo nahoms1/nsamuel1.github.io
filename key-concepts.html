@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Seven key concepts for understanding phishing and social engineering.">
+    <meta name="description" content="Nine key concepts for understanding phishing and social engineering.">
     <title>Key Concepts | Phishing &amp; Social Engineering</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,6 +21,7 @@
                 <li><a href="defenses.html">Defenses</a></li>
                 <li><a href="key-concepts.html" class="active">Key Concepts</a></li>
                 <li><a href="references.html">References</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
@@ -29,9 +30,9 @@
     <main class="content">
 
         <section class="card">
-            <h2>Seven Key Concepts</h2>
+            <h2>Nine Key Concepts</h2>
             <p>
-                These seven concepts form the foundation for understanding how
+                These nine concepts form the foundation for understanding how
                 phishing and social engineering attacks work — and how to stop them.
             </p>
         </section>
@@ -103,6 +104,29 @@
                 social engineering attempts. Effective programs are short, frequent,
                 role-relevant, and paired with realistic simulations and positive
                 reinforcement for reporting.
+            </p>
+        </section>
+
+        <section class="card concept">
+            <h3>8. Adversary-in-the-Middle (AiTM) Phishing</h3>
+            <p>
+                A technique in which the attacker proxies the victim's session in real
+                time between the victim and the real login page. Even if the victim
+                enters an MFA code, the attacker captures the session cookie and reuses
+                it. AiTM phishing is why SMS and push-based MFA are no longer sufficient
+                on their own and why phishing-resistant MFA (FIDO2/WebAuthn) is
+                recommended.
+            </p>
+        </section>
+
+        <section class="card concept">
+            <h3>9. Phishing-Resistant MFA (FIDO2 / WebAuthn)</h3>
+            <p>
+                A category of authentication that binds the login to the actual origin
+                of the website using public-key cryptography. Because the credential
+                will not respond to a look-alike domain, it defeats AiTM phishing and
+                stolen-session attacks. Security keys and platform authenticators
+                (e.g., Windows Hello, Touch ID) implement this standard.
             </p>
         </section>
 
