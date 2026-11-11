@@ -40,7 +40,7 @@
     // Human-readable correct answers for the results panel
     const ANSWER_TEXT = {
         1:  "B. Fraudulent messages impersonating a trusted party to steal information",
-        2:  "C. Spear phishing",
+        2:  "C. Whaling",
         3:  "B. SPF, DKIM, DMARC",
         4:  "B. They often contain no malware and no malicious link",
         5:  "A, B, and C (urgent language, mismatched sender, and misleading links)",
@@ -192,7 +192,7 @@
             const div = document.createElement("div");
             div.className = "result-row " + (item.correct ? "correct" : "incorrect");
 
-            const status = item.correct ? "✔ Correct" : "�’ Incorrect";
+            const status = item.correct ? "Correct (1/1)" : "Incorrect (0/1)";
             const answerText = "Correct answer: " + ANSWER_TEXT[item.q];
 
             div.innerHTML =
